@@ -3,6 +3,7 @@
   "name": "Instagram Post Downloader",
   "version": "1.3.0",
   "description": "Downloads every photo and video in an Instagram post at the highest available resolution.",
+  "homepage_url": "https://github.com/hidden-bluuu/instagram-downloader",
   "permissions": ["downloads", "contextMenus", "storage"],
   "background": {
     "service_worker": "background.js"

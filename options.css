@@ -143,3 +143,14 @@ footer .link {
   color: var(--muted);
   font-size: 12px;
 }
+
+.about {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.about a {
+  color: var(--accent);
+}
