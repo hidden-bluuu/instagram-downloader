@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <button id="download" type="button" disabled>⬇ Download this post</button>
+    <p id="hint" class="hint" hidden></p>
+
+    <fieldset>
+      <legend>Save files</legend>
+      <label class="option">
+        <input type="radio" name="folderMode" value="post" data-setting="folderMode" />
+        Each post in its own folder
+      </label>
+      <label class="option">
+        <input type="radio" name="folderMode" value="shared" data-setting="folderMode" />
+        All posts in one folder
+      </label>
+      <label class="option">
+        <input type="radio" name="folderMode" value="none" data-setting="folderMode" />
+        No folder
+      </label>
+      <p class="note">Example: <span id="preview" class="example"></span></p>
+    </fieldset>
+
+    <div class="rows">
+      <label class="row">
+        <span>Download</span>
+        <select data-setting="mediaTypes">
+          <option value="all">Photos and videos</option>
+          <option value="photos">Photos only</option>
+          <option value="videos">Videos only</option>
+        </select>
+      </label>
+      <label class="row">
+        <input type="checkbox" data-setting="saveCaption" />
+        <span>Also save the caption as a .txt file</span>
+      </label>
+    </div>
+
+    <div class="footer">
+      <button id="settings" class="link" type="button">All settings</button>
+      <button id="open-folder" class="link" type="button">Open Downloads folder</button>
+    </div>
+
+    <script src="shared.js"></script>
+    <script src="bind.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

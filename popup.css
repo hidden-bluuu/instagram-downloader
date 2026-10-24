@@ -1,0 +1,54 @@
+body {
+  width: 300px;
+  margin: 0;
+  padding: 14px;
+}
+
+#download {
+  width: 100%;
+  padding: 9px 14px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#download:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+#download:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+fieldset {
+  margin-top: 16px;
+}
+
+.rows {
+  margin-top: 14px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 0;
+}
+
+.row select {
+  margin-left: auto;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}

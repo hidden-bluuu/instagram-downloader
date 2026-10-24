@@ -1,0 +1,34 @@
+#igdl-button {
+  position: fixed;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2147483647;
+  padding: 9px 18px;
+  border: none;
+  border-radius: 999px;
+  background: #0095f6;
+  color: #fff;
+  font: 600 14px/1.2 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+#igdl-button[data-position="bottom"] {
+  top: auto;
+  bottom: 22px;
+}
+
+#igdl-button[hidden] {
+  display: none;
+}
+
+#igdl-button:hover {
+  background: #1877f2;
+}
+
+#igdl-button:disabled {
+  cursor: progress;
+  opacity: 0.9;
+}

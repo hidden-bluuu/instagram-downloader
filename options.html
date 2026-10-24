@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Instagram Post Downloader – Settings</title>
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <img src="icons/icon48.png" alt="" width="32" height="32" />
+        <h1>Instagram Post Downloader</h1>
+        <span id="saved" class="saved">Saved</span>
+      </header>
+
+      <section>
+        <h2>Where files go</h2>
+        <fieldset>
+          <label class="option">
+            <input type="radio" name="folderMode" value="post" data-setting="folderMode" />
+            Each post in its own folder
+          </label>
+          <label class="option">
+            <input type="radio" name="folderMode" value="shared" data-setting="folderMode" />
+            All posts in one folder
+          </label>
+          <label class="option">
+            <input type="radio" name="folderMode" value="none" data-setting="folderMode" />
+            No folder (straight into Downloads)
+          </label>
+        </fieldset>
+
+        <label class="field">
+          <span>Main folder</span>
+          <input type="text" data-setting="rootFolder" maxlength="80" spellcheck="false" />
+          <small>
+            Created inside your Downloads folder. Use <code>/</code> for nested folders, e.g.
+            <code>Social/Instagram</code>. Not used by “No folder”.
+          </small>
+        </label>
+
+        <label class="field">
+          <span>Post name</span>
+          <input type="text" data-setting="nameTemplate" maxlength="120" spellcheck="false" />
+          <div class="chips">
+            <button type="button" class="chip" data-token="{user}">{user}</button>
+            <button type="button" class="chip" data-token="{date}">{date}</button>
+            <button type="button" class="chip" data-token="{caption}">{caption}</button>
+            <button type="button" class="chip" data-token="{code}">{code}</button>
+          </div>
+          <small>
+            Names the post's folder, or prefixes each file when posts share a folder. Click a tag
+            to insert it. Add <code>/</code> to sort into subfolders, e.g.
+            <code>{user}/{date} {caption}</code> gives one folder per account.
+          </small>
+        </label>
+
+        <label class="field">
+          <span>Caption length in names</span>
+          <input type="number" data-setting="captionLength" min="0" max="100" />
+          <small>Characters of the caption's first line used for <code>{caption}</code>.</small>
+        </label>
+
+        <div class="field">
+          <span>Example</span>
+          <ul id="examples" class="examples"></ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>What to download</h2>
+        <label class="field">
+          <span>Media</span>
+          <select data-setting="mediaTypes">
+            <option value="all">Photos and videos</option>
+            <option value="photos">Photos only</option>
+            <option value="videos">Videos only</option>
+          </select>
+          <small>Applies to “Download all”. Right-clicking a single image always saves that image.</small>
+        </label>
+        <label class="check">
+          <input type="checkbox" data-setting="saveCaption" />
+          <span>
+            Also save the caption as <code>caption.txt</code>
+            <small>Includes the author, date and a link to the post.</small>
+          </span>
+        </label>
+        <label class="check">
+          <input type="checkbox" data-setting="rememberHistory" />
+          <span>
+            Remember downloaded posts
+            <small>Shows “Download again” instead of “Download all” on posts you already saved.</small>
+          </span>
+        </label>
+        <p class="indented">
+          <span id="history-count"></span>
+          <button id="clear-history" type="button" class="link">Clear history</button>
+        </p>
+      </section>
+
+      <section>
+        <h2>On Instagram</h2>
+        <label class="check">
+          <input type="checkbox" data-setting="showButton" />
+          <span>
+            Show the download button on posts
+            <small>
+              When hidden, progress shows as a badge on the toolbar icon (… working, ✓ done, ! error).
+            </small>
+          </span>
+        </label>
+        <label class="field">
+          <span>Button position</span>
+          <select data-setting="buttonPosition">
+            <option value="top">Top of the page</option>
+            <option value="bottom">Bottom of the page</option>
+          </select>
+        </label>
+      </section>
+
+      <section>
+        <h2>Keyboard shortcut</h2>
+        <p class="line">
+          Download the open post: <kbd id="shortcut">…</kbd>
+          <button id="change-shortcut" type="button" class="link">Change</button>
+        </p>
+      </section>
+
+      <footer>
+        <button id="reset" type="button" class="link">Reset all settings to defaults</button>
+      </footer>
+    </main>
+
+    <script src="shared.js"></script>
+    <script src="bind.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>
